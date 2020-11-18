@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "packages",
+  "name": "BuddysGame",
+  "id": "c0a570fb-d937-480c-b58e-7f0bd5718e2f",
+  "version": "2.4.3",
+  "isNew": false
+}
