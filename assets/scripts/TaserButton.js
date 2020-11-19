@@ -1,7 +1,17 @@
 cc.Class({
   extends: cc.Component,
 
+  properties: {
+    buddy: cc.Node,
+    animator: cc.String
+  },
+
+  onLoad () {
+    const script = this.buddy.getComponent(this.animator);
+    this.playAnimation = script.playAnimation.bind(script);
+  },
+
   onClick () {
-    console.log('TaserButton.onClick');
+    this.playAnimation('idle_shock');
   }
 });
