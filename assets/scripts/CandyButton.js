@@ -2,16 +2,15 @@ cc.Class({
   extends: cc.Component,
 
   properties: {
-    buddy: cc.Node,
-    animator: cc.String
+    gameCanvas: cc.Node
   },
 
   onLoad () {
-    const script = this.buddy.getComponent(this.animator);
-    this.playAnimation = script.playAnimation.bind(script);
+    const game = this.gameCanvas.getComponent('GameManager');
+    this.playAnimation = game.toggleAnimation.bind(game);
   },
 
   onClick () {
-    this.playAnimation('idle_candy');
+    this.playAnimation(this.node.name, 'idle_candy');
   }
 });

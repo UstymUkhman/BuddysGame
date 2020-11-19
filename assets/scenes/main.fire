@@ -15,6 +15,9 @@
     "_children": [
       {
         "__id__": 2
+      },
+      {
+        "__id__": 31
       }
     ],
     "_active": true,
@@ -91,6 +94,9 @@
       },
       {
         "__id__": 29
+      },
+      {
+        "__id__": 30
       }
     ],
     "_prefab": null,
@@ -180,7 +186,7 @@
       "array": [
         0,
         0,
-        220.83647796503186,
+        454.85210885504347,
         0,
         0,
         0,
@@ -845,10 +851,9 @@
       "__id__": 10
     },
     "_enabled": true,
-    "buddy": {
-      "__id__": 7
+    "gameCanvas": {
+      "__id__": 2
     },
-    "animator": "BuddyManager",
     "_id": "e1mnjqr9hE/qeDfYuphc5o"
   },
   {
@@ -1246,10 +1251,9 @@
       "__id__": 19
     },
     "_enabled": true,
-    "buddy": {
-      "__id__": 7
+    "gameCanvas": {
+      "__id__": 2
     },
-    "animator": "BuddyManager",
     "_id": "f41j1uuVhDt5NH655RvQ96"
   },
   {
@@ -1295,5 +1299,140 @@
     "_originalWidth": 0,
     "_originalHeight": 0,
     "_id": "f3IULg1dRNVqf8oQz0qwk9"
+  },
+  {
+    "__type__": "3c05dVoe5JItp/FCJo58zyP",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "buddy": {
+      "__id__": 7
+    },
+    "resultScreen": {
+      "__id__": 31
+    },
+    "buddyAnimator": "BuddyAnimator",
+    "resultManager": "ResultManager",
+    "gameButtons": [
+      {
+        "__id__": 10
+      },
+      {
+        "__id__": 19
+      }
+    ],
+    "_id": "df+lGQ2EJCUamEPw6Kdn1q"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Result",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 32
+      },
+      {
+        "__id__": 33
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 0,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 1400,
+      "height": 800
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -220,
+        -80,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "145kOGsrNJHLSlpKFTwtV1"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 31
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 771,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "ff0e91c7-55c6-4086-a39f-cb6e457b8c3b"
+    },
+    "_type": 2,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": false,
+    "_atlas": null,
+    "_id": "f7Jx2ZZDdP9b/L11Hnfr9C"
+  },
+  {
+    "__type__": "c9fbfVjR1NJ5YBmPoqUbd+q",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 31
+    },
+    "_enabled": true,
+    "appStoreURL": "https://apps.apple.com/us/app/kick-the-buddy-forever/id1435346021",
+    "playStoreURL": "https://play.google.com/store/apps/details?id=com.playgendary.kickthebuddy",
+    "_id": "88U8ioppxB+L/okh8d8Rvn"
   }
 ]
