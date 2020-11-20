@@ -2,7 +2,8 @@ cc.Class({
   extends: cc.Component,
 
   properties: {
-    gameCanvas: cc.Node
+    gameCanvas: cc.Node,
+    animation: cc.String
   },
 
   onLoad () {
@@ -11,6 +12,6 @@ cc.Class({
   },
 
   onClick () {
-    this.playAnimation(this.node.name, 'idle_candy');
+    this.playAnimation(this.node.name, this.animation);
   }
 });
