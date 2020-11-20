@@ -1,3 +1,3 @@
 # Buddy's Game
 
-> Buddy's Game hello_world.
+> Built with ❤️ and Cocos Creator for Playgendary.

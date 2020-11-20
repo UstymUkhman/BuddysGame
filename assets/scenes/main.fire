@@ -1462,7 +1462,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        210,
+        400,
         0,
         0,
         0,
@@ -1563,7 +1563,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -225,
+        -376,
         0,
         0,
         0,
@@ -1827,6 +1827,9 @@
       "__id__": 28
     },
     "_enabled": true,
+    "gameLogo": {
+      "__id__": 31
+    },
     "downloadButton": {
       "__id__": 33
     },
