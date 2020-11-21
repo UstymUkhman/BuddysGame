@@ -9,12 +9,25 @@ cc.Class({
     gameButtons: [cc.Node, cc.Node]
   },
 
+  // Background:
+  // - scale.x: 0.285
+  // - scale.y: 0.9
+
   onLoad () {
     const buddy = this.buddy.getComponent(this.buddyAnimator);
     const result = this.resultScreen.getComponent(this.resultManager);
 
     this.buddyAnimation = buddy.playAnimation.bind(buddy);
     this.showResultScreen = result.showScreen.bind(result);
+
+    cc.view.setResizeCallback(this.onResize.bind(this));
+    console.log('getCanvasSize', cc.view.getCanvasSize());
+
+    console.log('getFrameSize', cc.view.getFrameSize());
+  },
+
+  onResize (a) {
+    console.log('onResizeCallback', a);
   },
 
   toggleAnimation (clickedButton, animation, loop) {
