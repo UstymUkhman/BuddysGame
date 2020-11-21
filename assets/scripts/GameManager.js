@@ -4,30 +4,17 @@ cc.Class({
   properties: {
     buddy: cc.Node,
     resultScreen: cc.Node,
-    buddyAnimator: cc.String,
+    buddyManager: cc.String,
     resultManager: cc.String,
     gameButtons: [cc.Node, cc.Node]
   },
 
-  // Background:
-  // - scale.x: 0.285
-  // - scale.y: 0.9
-
   onLoad () {
-    const buddy = this.buddy.getComponent(this.buddyAnimator);
+    const buddy = this.buddy.getComponent(this.buddyManager);
     const result = this.resultScreen.getComponent(this.resultManager);
 
     this.buddyAnimation = buddy.playAnimation.bind(buddy);
     this.showResultScreen = result.showScreen.bind(result);
-
-    cc.view.setResizeCallback(this.onResize.bind(this));
-    console.log('getCanvasSize', cc.view.getCanvasSize());
-
-    console.log('getFrameSize', cc.view.getFrameSize());
-  },
-
-  onResize (a) {
-    console.log('onResizeCallback', a);
   },
 
   toggleAnimation (clickedButton, animation, loop) {
@@ -37,18 +24,19 @@ cc.Class({
 
     const otherButton = this.gameButtons.find(
       button => button.name !== clickedButton
-    );
+    ).getComponent(cc.Button);
 
     this.buddyAnimation(animation, loop);
+    otherButton.interactable = false;
     this.showResultScreen();
 
-    cc.tween(otherButton)
+    cc.tween(otherButton.node)
       .to(1.0, { opacity: 0.0 })
       .start();
 
     cc.tween(pressedButton)
       .delay(0.5)
-      .to(1.0, { opacity: 0.0 })
+      .to(0.5, { opacity: 0.0 })
       .start();
   }
 });

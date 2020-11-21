@@ -6,18 +6,13 @@ cc.Class({
     downloadButton: cc.Node
   },
 
-  onLoad () {
-    this.downloadButton.active = false;
-  },
-
   showScreen () {
     cc.tween(this.node)
       .delay(1.5)
       .to(0.5, { opacity: 255.0 })
-      .call(() => { this.downloadButton.active = true; })
       .start();
 
-      cc.tween(this.gameLogo)
+    cc.tween(this.gameLogo)
       .delay(2.0)
       .to(0.35, { position: cc.v2(0.0, 210.0) }, { easing: 'backOut' })
       .start();
