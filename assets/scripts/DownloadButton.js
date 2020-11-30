@@ -13,12 +13,12 @@ cc.Class({
 
   onLoad () {
     const appleOS = [cc.sys.IPHONE, cc.sys.IPAD, cc.sys.MACOS];
-    this.isAppleOS = appleOS.includes(cc.sys.platform);
+
+    this.URL = appleOS.includes(cc.sys.platform)
+      ? this.appStoreURL : this.playStoreURL;
   },
 
   onClick () {
-    cc.sys.openURL(
-      this.isAppleOS ? this.appStoreURL : this.playStoreURL
-    );
+    cc.sys.openURL(this.URL);
   }
 });

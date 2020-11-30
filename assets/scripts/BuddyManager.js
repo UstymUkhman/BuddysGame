@@ -5,8 +5,8 @@ cc.Class({
     this.skeleton = this.getComponent(sp.Skeleton);
   },
 
-  playAnimation (animation, loop = true) {
+  play (animation) {
     this.skeleton.clearTrack(0);
-    this.skeleton.setAnimation(0, animation, loop);
+    this.skeleton.setAnimation(0, animation, true);
   }
 });

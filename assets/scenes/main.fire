@@ -854,7 +854,7 @@
       "__id__": 10
     },
     "_enabled": true,
-    "gameCanvas": {
+    "game": {
       "__id__": 2
     },
     "animation": "idle_shock",
@@ -1255,7 +1255,7 @@
       "__id__": 19
     },
     "_enabled": true,
-    "gameCanvas": {
+    "game": {
       "__id__": 2
     },
     "animation": "idle_candy",
@@ -1896,8 +1896,6 @@
     "resultScreen": {
       "__id__": 28
     },
-    "buddyManager": "BuddyManager",
-    "resultManager": "ResultManager",
     "gameButtons": [
       {
         "__id__": 10
