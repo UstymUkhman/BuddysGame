@@ -10,7 +10,8 @@ cc.Class({
     candyButton: cc.Node,
 
     resultOverlay: cc.Node,
-    downloadButton: cc.Node,    
+    downloadButton: cc.Node,
+
     backgroundWidth: { default: 646 }
   },
 
