@@ -9,7 +9,7 @@ cc.Class({
 
   onLoad () {
     this.result = this.resultScreen.getComponent('ResultManager');
-    this.buddy = this.buddy.getComponent('BuddyManager');
+    this.animator = this.buddy.getComponent('BuddyManager');
 
     this.buttons = this.gameButtons.map(
       button => button.getComponent(cc.Button)
@@ -27,7 +27,7 @@ cc.Class({
         .start()
     );
 
-    this.buddy.play(animation);
+    this.animator.play(animation);
     this.result.showScreen();
   }
 });

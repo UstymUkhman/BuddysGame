@@ -5,91 +5,61 @@ cc.Class({
     buddy: cc.Node,
     gameLogo: cc.Node,
     background: cc.Node,
+
     taserButton: cc.Node,
     candyButton: cc.Node,
-    downloadButton: cc.Node
+
+    resultOverlay: cc.Node,
+    downloadButton: cc.Node,    
+    backgroundWidth: { default: 646 }
   },
 
   onLoad () {
     cc.view.setResizeCallback(this.onResize.bind(this));
-    this.lastOrientationPortrait = false;
     this.onResize();
   },
 
-  onResize () {    
+  onResize () {
     const { width, height } = cc.view.getCanvasSize();
-    const phone = Math.min(width, height) < 768;
-
-    const fullHDRatio = width / 1920.0;
-    const isPortrait = width < height;
     const ratio = width / height;
 
-    isPortrait
-      ? this.setPortrait(ratio, fullHDRatio)
-      : this.setLandscape(ratio, fullHDRatio, phone);
+    width < height
+      ? this.setPortrait(ratio)
+      : this.setLandscape(ratio);
 
-    this.lastOrientationPortrait = isPortrait;
+    const backgroundWidth = ratio * this.backgroundWidth;
+
+    this.resultOverlay.width = backgroundWidth;
+    this.background.width = backgroundWidth;
   },
 
-  setPortrait (ratio, fullHDRatio) {
+  setPortrait (ratio) {
     const buttonX = ratio * 205.7;
-    const scaleX = Math.max(0.285, Math.min(fullHDRatio, 0.46));
 
-    this.background.setScale(cc.v2(scaleX, 0.9));
+    this.taserButton.setPosition(-buttonX, -255.0);
+    this.candyButton.setPosition(buttonX, -255.0);
 
-    if (this.lastOrientationPortrait) {
-      this.taserButton.x = -buttonX;
-      this.candyButton.x = buttonX;
-    }
+    this.downloadButton.scale = 0.5;
+    this.candyButton.scale = 0.75;
+    this.taserButton.scale = 0.75;
 
-    else {
-      this.candyButton.scale = 0.75;
-      this.taserButton.scale = 0.75;
-
-      this.buddy.scale = 0.5;
-      this.buddy.y = -165.0;
-
-      this.gameLogo.scale = 0.5;
-      this.downloadButton.scale = 0.5;
-
-      cc.tween(this.taserButton)
-        .to(0.15, { position: cc.v2(-buttonX, -255.0) })
-        .start();
-
-      cc.tween(this.candyButton)
-        .to(0.15, { position: cc.v2(buttonX, -255.0) })
-        .start();
-    }
+    this.gameLogo.scale = 0.5;
+    this.buddy.scale = 0.5;
+    this.buddy.y = -165.0;
   },
 
-  setLandscape (ratio, fullHDRatio, isPhone) {
+  setLandscape (ratio) {
     const buttonX = ratio * 239.0625;
-    const scaleX = isPhone ? 1.0 : Math.max(0.625, fullHDRatio);
 
-    this.background.setScale(cc.v2(scaleX, 1.0));
+    this.candyButton.setPosition(buttonX, -225.0);
+    this.taserButton.setPosition(buttonX, -75.0);
 
-    if (this.lastOrientationPortrait) {
-      this.taserButton.scale = 1.0;
-      this.candyButton.scale = 1.0;
+    this.downloadButton.scale = 1.0;
+    this.taserButton.scale = 1.0;
+    this.candyButton.scale = 1.0;
 
-      this.buddy.scale = 0.75;
-      this.buddy.y = -190.0;
-
-      this.gameLogo.scale = 1.0;
-      this.downloadButton.scale = 1.0;
-
-      cc.tween(this.candyButton)
-        .to(0.15, { position: cc.v2(buttonX, -225.0) })
-        .start();
-
-      cc.tween(this.taserButton)
-        .to(0.15, { position: cc.v2(buttonX, -75.0) })
-        .start();
-    }
-
-    else {
-      this.candyButton.x = buttonX;
-      this.taserButton.x = buttonX;
-    }
+    this.gameLogo.scale = 1.0;
+    this.buddy.scale = 0.75;
+    this.buddy.y = -190.0;
   }
 });
